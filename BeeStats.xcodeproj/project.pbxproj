@@ -13,6 +13,7 @@
 		4FAC4A411D50054400154B06 /* BeeStats.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4FAC4A3F1D50054400154B06 /* BeeStats.xcdatamodeld */; };
 		4FAC4A431D50054400154B06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FAC4A421D50054400154B06 /* Assets.xcassets */; };
 		4FAC4A461D50054400154B06 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FAC4A441D50054400154B06 /* LaunchScreen.storyboard */; };
+		4FAC4A4E1D50055E00154B06 /* Classes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAC4A4D1D50055E00154B06 /* Classes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		4FAC4A421D50054400154B06 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4FAC4A451D50054400154B06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4FAC4A471D50054400154B06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4FAC4A4D1D50055E00154B06 /* Classes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Classes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				4FAC4A381D50054400154B06 /* AppDelegate.swift */,
 				4FAC4A3A1D50054400154B06 /* ViewController.swift */,
+				4FAC4A4D1D50055E00154B06 /* Classes.swift */,
 				4FAC4A3C1D50054400154B06 /* Main.storyboard */,
 				4FAC4A421D50054400154B06 /* Assets.xcassets */,
 				4FAC4A441D50054400154B06 /* LaunchScreen.storyboard */,
@@ -143,6 +146,7 @@
 			files = (
 				4FAC4A411D50054400154B06 /* BeeStats.xcdatamodeld in Sources */,
 				4FAC4A3B1D50054400154B06 /* ViewController.swift in Sources */,
+				4FAC4A4E1D50055E00154B06 /* Classes.swift in Sources */,
 				4FAC4A391D50054400154B06 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
