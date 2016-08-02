@@ -10,30 +10,45 @@ import UIKit
 
 class PlayerViewController: UIViewController {
   
+  @IBOutlet weak var statusLabel: UILabel!
+  
+  var player = Player() {
+    
+    // When player changes do this
+    
+    didSet {
+      playernameLabel.text = player.username
+      
+      // When lastLogin is bigger than lastLogout it means that currently the user is logged in.
+      if player.lastLogin > player.lastLogout {
+        statusLabel.text = "Online"
+      } else {
+        statusLabel.text = "Offline"
+      }
+    }
+  }
   @IBOutlet weak var statTable: UITableView!
-  var player = Player()
+  
+  @IBOutlet weak var playernameLabel: UILabel!
+
   var requestedUsername = ""
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    updateUI()
     statTable.dataSource = self
+    downloadTheShit()
   }
   
-  
-  func updateUI() {
-    
-    let parsing = DownloadUserProfile()
-    parsing.downloadJSON(requestedUsername) { (player) in
-      
+  func downloadTheShit() {
+    let load = DownloadUserProfile()
+    load.downloadJSON(requestedUsername) { (player) in
       DispatchQueue.main.async {
         self.player = player!
-        self.statTable.reloadData()
       }
-    
+    }
   }
-  
+
   func updateOnlineStatus(online: Bool) {
     if online == true {
       updateLogoNavBar(name: "online")
@@ -54,7 +69,6 @@ class PlayerViewController: UIViewController {
   func addToFavorite(_ sender: AnyObject) {
     
   }
-}
 }
 
 extension PlayerViewController: UITableViewDataSource {

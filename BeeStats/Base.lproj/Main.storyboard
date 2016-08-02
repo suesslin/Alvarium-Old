@@ -3,11 +3,14 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11103.10"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Ubuntu-R.ttf">
+            <string>Ubuntu</string>
+            <string>Ubuntu</string>
+            <string>Ubuntu</string>
+            <string>Ubuntu</string>
             <string>Ubuntu</string>
             <string>Ubuntu</string>
         </mutableArray>
@@ -39,83 +42,19 @@
                     <navigationItem key="navigationItem" id="00x-E7-Pyb"/>
                     <connections>
                         <outlet property="searchBar" destination="AWB-Dz-amg" id="ytt-gr-HS0"/>
-                        <segue destination="RW2-fx-bRt" kind="show" identifier="toPlayer" id="gsB-bP-ujs"/>
+                        <segue destination="PM5-Jg-Irl" kind="show" identifier="toPlayer" id="lB8-Wc-Lkx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oxU-Tv-ALb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="756" y="0.44977511244377816"/>
         </scene>
-        <!--Player View Controller-->
-        <scene sceneID="5u5-an-dte">
-            <objects>
-                <viewController id="RW2-fx-bRt" customClass="PlayerViewController" customModule="BeeStats" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Oho-m3-p98"/>
-                        <viewControllerLayoutGuide type="bottom" id="f6f-Gu-WTL"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="GoF-oI-rQN">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KXG-bg-Mrv">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="stat" id="QDK-Go-hFA" customClass="StatTableViewCell" customModule="BeeStats" customModuleProvider="target">
-                                        <frame key="frameInset" minY="92" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QDK-Go-hFA" id="Iog-Ck-pUU">
-                                            <frame key="frameInset" width="375" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CoN-rf-n3n">
-                                                    <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B0c-uF-nj4">
-                                                    <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
-                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="B0c-uF-nj4" secondAttribute="trailing" constant="8" id="AOH-5k-zlE"/>
-                                                <constraint firstItem="B0c-uF-nj4" firstAttribute="centerY" secondItem="Iog-Ck-pUU" secondAttribute="centerY" id="eIL-Al-Zfm"/>
-                                                <constraint firstItem="CoN-rf-n3n" firstAttribute="leading" secondItem="Iog-Ck-pUU" secondAttribute="leadingMargin" id="mDw-oH-HMm"/>
-                                                <constraint firstItem="CoN-rf-n3n" firstAttribute="centerY" secondItem="Iog-Ck-pUU" secondAttribute="centerY" id="vX5-pc-aRx"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="keyLabel" destination="CoN-rf-n3n" id="RVZ-nA-19W"/>
-                                            <outlet property="valueLabel" destination="B0c-uF-nj4" id="P2N-ok-jRQ"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="KXG-bg-Mrv" firstAttribute="leading" secondItem="GoF-oI-rQN" secondAttribute="leading" id="KqK-Re-doU"/>
-                            <constraint firstAttribute="trailing" secondItem="KXG-bg-Mrv" secondAttribute="trailing" id="YKI-9l-Rjt"/>
-                            <constraint firstItem="f6f-Gu-WTL" firstAttribute="top" secondItem="KXG-bg-Mrv" secondAttribute="bottom" id="coN-fb-urs"/>
-                            <constraint firstItem="KXG-bg-Mrv" firstAttribute="top" secondItem="Oho-m3-p98" secondAttribute="bottom" id="mw0-yx-IbA"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="statTable" destination="KXG-bg-Mrv" id="Irh-RN-e9z"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bTw-lS-7Bk" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1452" y="-0.44977511244377816"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="a4H-mY-8Xy">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="q7F-ph-DMx" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="gjr-49-pr5">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gjr-49-pr5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -128,5 +67,132 @@
             </objects>
             <point key="canvasLocation" x="-183.19999999999999" y="0.44977511244377816"/>
         </scene>
+        <!--Player View Controller-->
+        <scene sceneID="NOF-34-dEl">
+            <objects>
+                <viewController id="PM5-Jg-Irl" customClass="PlayerViewController" customModule="BeeStats" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7hb-2S-o7I"/>
+                        <viewControllerLayoutGuide type="bottom" id="ERO-G1-yHg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GWn-y2-IkC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user_profile_bg" translatesAutoresizingMaskIntoConstraints="NO" id="plt-T0-saa">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="194" id="eto-Z2-wUc"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_profileImage" translatesAutoresizingMaskIntoConstraints="NO" id="VtO-uC-OBV">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="6CH-DH-PYV"/>
+                                    <constraint firstAttribute="height" constant="80" id="bhV-j9-1aL"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Loading Rank" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MvU-gq-i4O">
+                                <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="14"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Loading Tokens" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rtP-hX-exA">
+                                <frame key="frameInset" minX="108" minY="166" width="99" height="16"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="14"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Loading Status" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C8s-4b-eUi">
+                                <frame key="frameInset" minX="188" minY="185" width="151" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="14"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="606-e5-uHZ">
+                                <frame key="frameInset" minX="108" minY="189" width="72" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uXh-rc-8NR">
+                                <frame key="frameInset" minY="266" width="375" height="401"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="stat" id="6E1-tt-7Uw" userLabel="stat" customClass="StatTableViewCell" customModule="BeeStats" customModuleProvider="target">
+                                        <frame key="frameInset" minY="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6E1-tt-7Uw" id="Nhj-d2-ZbG">
+                                            <frame key="frameInset" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading type" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tjB-5E-EGA">
+                                                    <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading value" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fbp-6P-cmY">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="146" id="ASj-FX-HmZ"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
+                                                    <color key="textColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="Fbp-6P-cmY" secondAttribute="trailing" constant="8" id="2Rq-uf-iX9"/>
+                                                <constraint firstItem="Fbp-6P-cmY" firstAttribute="top" secondItem="Nhj-d2-ZbG" secondAttribute="top" constant="11" id="VbF-32-ADF"/>
+                                                <constraint firstItem="tjB-5E-EGA" firstAttribute="centerY" secondItem="Nhj-d2-ZbG" secondAttribute="centerY" id="chY-Jc-ZUE"/>
+                                                <constraint firstItem="tjB-5E-EGA" firstAttribute="top" secondItem="Nhj-d2-ZbG" secondAttribute="top" constant="11" id="fFd-VD-UtD"/>
+                                                <constraint firstItem="tjB-5E-EGA" firstAttribute="leading" secondItem="Nhj-d2-ZbG" secondAttribute="leading" constant="8" id="g2D-Or-i32"/>
+                                                <constraint firstItem="tjB-5E-EGA" firstAttribute="baseline" secondItem="Fbp-6P-cmY" secondAttribute="baseline" id="j8x-S8-R1U"/>
+                                                <constraint firstItem="Fbp-6P-cmY" firstAttribute="leading" secondItem="tjB-5E-EGA" secondAttribute="trailing" constant="8" symbolic="YES" id="phd-q5-P8S"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="typeLabel" destination="tjB-5E-EGA" id="EMC-yX-4Rd"/>
+                                            <outlet property="valueLabel" destination="Fbp-6P-cmY" id="aOF-b9-ViW"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading Username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LqQ-Co-Frz">
+                                <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="21"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="MvU-gq-i4O" firstAttribute="leading" secondItem="VtO-uC-OBV" secondAttribute="trailing" constant="8" id="8sr-Oe-bMA"/>
+                            <constraint firstAttribute="trailing" secondItem="plt-T0-saa" secondAttribute="trailing" id="9Ll-bb-KAx"/>
+                            <constraint firstItem="plt-T0-saa" firstAttribute="top" secondItem="7hb-2S-o7I" secondAttribute="bottom" id="BRr-G1-Q56"/>
+                            <constraint firstItem="LqQ-Co-Frz" firstAttribute="leading" secondItem="VtO-uC-OBV" secondAttribute="trailing" constant="8" id="HeK-Ol-y0b"/>
+                            <constraint firstItem="VtO-uC-OBV" firstAttribute="leading" secondItem="GWn-y2-IkC" secondAttribute="leading" constant="16" id="MGq-FE-byC"/>
+                            <constraint firstItem="VtO-uC-OBV" firstAttribute="top" secondItem="7hb-2S-o7I" secondAttribute="bottom" constant="16" id="cbp-cD-IDt"/>
+                            <constraint firstItem="VtO-uC-OBV" firstAttribute="leading" secondItem="GWn-y2-IkC" secondAttribute="leading" constant="16" id="f0K-wc-vQO"/>
+                            <constraint firstItem="LqQ-Co-Frz" firstAttribute="top" secondItem="7hb-2S-o7I" secondAttribute="bottom" constant="16" id="m8a-mZ-FOh"/>
+                            <constraint firstItem="MvU-gq-i4O" firstAttribute="top" secondItem="LqQ-Co-Frz" secondAttribute="bottom" constant="8" id="sY8-n1-Fg3"/>
+                            <constraint firstItem="plt-T0-saa" firstAttribute="leading" secondItem="GWn-y2-IkC" secondAttribute="leading" id="uZI-xB-hsU"/>
+                            <constraint firstItem="VtO-uC-OBV" firstAttribute="top" secondItem="7hb-2S-o7I" secondAttribute="bottom" constant="16" id="vwx-SU-DbB"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ec6-Io-RTy"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <connections>
+                        <outlet property="playernameLabel" destination="LqQ-Co-Frz" id="NhF-EH-0cI"/>
+                        <outlet property="statTable" destination="uXh-rc-8NR" id="G71-ac-AYc"/>
+                        <outlet property="statusLabel" destination="C8s-4b-eUi" id="b3Y-qQ-bMA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hse-dx-9lK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1533.5999999999999" y="-0.44977511244377816"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="default_profileImage" width="250" height="250"/>
+        <image name="user_profile_bg" width="1025" height="103"/>
+    </resources>
 </document>
