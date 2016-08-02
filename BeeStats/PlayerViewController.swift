@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  PlayerViewController.swift
 //  BeeStats
 //
 //  Created by Lukas A. Müller on 01/08/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class PlayerViewController: UIViewController {
   
   var player = Player()
 
