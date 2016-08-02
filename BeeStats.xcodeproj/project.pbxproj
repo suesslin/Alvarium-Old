@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F0D486A1D502B7B006F8376 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0D48691D502B7B006F8376 /* MasterViewController.swift */; };
+		4F0D486F1D502C60006F8376 /* Ubuntu-L.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4F0D486B1D502C60006F8376 /* Ubuntu-L.ttf */; };
+		4F0D48701D502C60006F8376 /* Ubuntu-M.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4F0D486C1D502C60006F8376 /* Ubuntu-M.ttf */; };
+		4F0D48711D502C60006F8376 /* Ubuntu-R.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4F0D486D1D502C60006F8376 /* Ubuntu-R.ttf */; };
 		4FAC4A391D50054400154B06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAC4A381D50054400154B06 /* AppDelegate.swift */; };
 		4FAC4A3B1D50054400154B06 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAC4A3A1D50054400154B06 /* PlayerViewController.swift */; };
 		4FAC4A3E1D50054400154B06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FAC4A3C1D50054400154B06 /* Main.storyboard */; };
@@ -16,9 +20,14 @@
 		4FAC4A4E1D50055E00154B06 /* Classes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAC4A4D1D50055E00154B06 /* Classes.swift */; };
 		4FAC4A501D500E0900154B06 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAC4A4F1D500E0900154B06 /* Network.swift */; };
 		4FAC4A521D50109200154B06 /* Parsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAC4A511D50109200154B06 /* Parsing.swift */; };
+		4FDA59041D503456003308FE /* StatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FDA59031D503456003308FE /* StatTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4F0D48691D502B7B006F8376 /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		4F0D486B1D502C60006F8376 /* Ubuntu-L.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-L.ttf"; sourceTree = "<group>"; };
+		4F0D486C1D502C60006F8376 /* Ubuntu-M.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-M.ttf"; sourceTree = "<group>"; };
+		4F0D486D1D502C60006F8376 /* Ubuntu-R.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-R.ttf"; sourceTree = "<group>"; };
 		4FAC4A351D50054400154B06 /* BeeStats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeeStats.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FAC4A381D50054400154B06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4FAC4A3A1D50054400154B06 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
@@ -30,6 +39,7 @@
 		4FAC4A4D1D50055E00154B06 /* Classes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Classes.swift; sourceTree = "<group>"; };
 		4FAC4A4F1D500E0900154B06 /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		4FAC4A511D50109200154B06 /* Parsing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parsing.swift; sourceTree = "<group>"; };
+		4FDA59031D503456003308FE /* StatTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +53,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4F0D486E1D502C60006F8376 /* UbuntuFont */ = {
+			isa = PBXGroup;
+			children = (
+				4F0D486B1D502C60006F8376 /* Ubuntu-L.ttf */,
+				4F0D486C1D502C60006F8376 /* Ubuntu-M.ttf */,
+				4F0D486D1D502C60006F8376 /* Ubuntu-R.ttf */,
+			);
+			name = UbuntuFont;
+			path = ../../../Documents/Coding/beestats/BeeStats/ubuntuFont;
+			sourceTree = "<group>";
+		};
 		4FAC4A2C1D50054400154B06 = {
 			isa = PBXGroup;
 			children = (
@@ -63,10 +84,13 @@
 			isa = PBXGroup;
 			children = (
 				4FAC4A381D50054400154B06 /* AppDelegate.swift */,
+				4F0D486E1D502C60006F8376 /* UbuntuFont */,
+				4F0D48691D502B7B006F8376 /* MasterViewController.swift */,
 				4FAC4A3A1D50054400154B06 /* PlayerViewController.swift */,
 				4FAC4A4D1D50055E00154B06 /* Classes.swift */,
 				4FAC4A4F1D500E0900154B06 /* Network.swift */,
 				4FAC4A511D50109200154B06 /* Parsing.swift */,
+				4FDA59031D503456003308FE /* StatTableViewCell.swift */,
 				4FAC4A3C1D50054400154B06 /* Main.storyboard */,
 				4FAC4A421D50054400154B06 /* Assets.xcassets */,
 				4FAC4A441D50054400154B06 /* LaunchScreen.storyboard */,
@@ -137,6 +161,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F0D48711D502C60006F8376 /* Ubuntu-R.ttf in Resources */,
+				4F0D486F1D502C60006F8376 /* Ubuntu-L.ttf in Resources */,
+				4F0D48701D502C60006F8376 /* Ubuntu-M.ttf in Resources */,
 				4FAC4A461D50054400154B06 /* LaunchScreen.storyboard in Resources */,
 				4FAC4A431D50054400154B06 /* Assets.xcassets in Resources */,
 				4FAC4A3E1D50054400154B06 /* Main.storyboard in Resources */,
@@ -151,10 +178,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FAC4A501D500E0900154B06 /* Network.swift in Sources */,
+				4FDA59041D503456003308FE /* StatTableViewCell.swift in Sources */,
 				4FAC4A411D50054400154B06 /* BeeStats.xcdatamodeld in Sources */,
 				4FAC4A3B1D50054400154B06 /* PlayerViewController.swift in Sources */,
 				4FAC4A4E1D50055E00154B06 /* Classes.swift in Sources */,
 				4FAC4A521D50109200154B06 /* Parsing.swift in Sources */,
+				4F0D486A1D502B7B006F8376 /* MasterViewController.swift in Sources */,
 				4FAC4A391D50054400154B06 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

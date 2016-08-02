@@ -17,8 +17,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     // Override point for customization after application launch.
+    setStatusBarBackgroundColor(color: UIColor(red: 110.0/255.0, green: 37.0/255.0, blue: 82.0/255.0, alpha: 1.0))
     return true
   }
+  
+  func setStatusBarBackgroundColor(color: UIColor) {
+    
+    guard let statusBar = UIApplication.shared().value(forKey: "statusBarWindow")?.value(forKey: "statusBar") as? UIView else {
+      return
+    }
+    
+    statusBar.backgroundColor = color
+  }
+
 
   func applicationWillResignActive(_ application: UIApplication) {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
