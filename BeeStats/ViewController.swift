@@ -9,11 +9,20 @@
 import UIKit
 
 class ViewController: UIViewController {
+  
+  var player = Player()
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+    parsing()
   }
-
+  
+  func parsing() {
+    let ply = DownloadUserProfile()
+    ply.downloadJSON("OddDork") { (player) in
+      print(player?.rankName)
+      debugPrint(player)
+    }
+  }
 }
 
