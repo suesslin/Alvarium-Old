@@ -58,6 +58,20 @@ struct Player {
         gameModes.append(sgStats)
     }
     
+    // TIMV
+    
+    if let timvDic = dictionary?["timv"] as? [String:AnyObject] {
+      let timvStats = GameMode(fullName: "Trouble in MineVille", acronym: "TIMV", stats: [
+        Stat(key: "Detective Points", value: timvDic["detective"] as! Int),
+        Stat(key: "Innocent Points", value: timvDic["innocent"] as! Int),
+        Stat(key: "Traitor Points", value: timvDic["traitor"] as! Int),
+        Stat(key: "Most Points/Round", value: timvDic["mostPoints"] as! Int),
+        Stat(key: "Karma", value: timvDic["karma"] as! Int)
+        ])
+      gameModes.append(timvStats)
+    }
+
+    
   }
   
 }
