@@ -11,13 +11,22 @@ import UIKit
 class PlayerViewController: UIViewController {
   
   @IBOutlet weak var statusLabel: UILabel!
+  @IBOutlet weak var playerHeadImage: UIImageView!
+  @IBOutlet weak var rankLabel: UILabel!
+  @IBOutlet weak var tokensLabel: UILabel!
+  @IBOutlet weak var statTable: UITableView!
+  @IBOutlet weak var playernameLabel: UILabel!
+  
+  var requestedPlayername = ""
   
   var player = Player() {
     
-    // When player changes do this
+    // DidSet excutes when data has been loaded and player overwritten
     
     didSet {
       playernameLabel.text = player.username
+      
+      statTable.reloadData()
       
       // When lastLogin is bigger than lastLogout it means that currently the user is logged in.
       if player.lastLogin > player.lastLogout {
@@ -25,24 +34,41 @@ class PlayerViewController: UIViewController {
       } else {
         statusLabel.text = "Offline"
       }
+      
+      tokensLabel.text = "\(player.tokens) Tokens"
+      rankLabel.text = player.rankName
+      
     }
   }
-  @IBOutlet weak var statTable: UITableView!
-  
-  @IBOutlet weak var playernameLabel: UILabel!
-
-  var requestedUsername = ""
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
     statTable.dataSource = self
-    downloadTheShit()
+    updateUI()
+  }
+
+  func updateUI() {
+    // Updates Username, stats, etc. via JSON
+    downloadJson(playername: requestedPlayername)
+    // Download player head profile picture
+    downloadPlayerHead(playername: requestedPlayername)
   }
   
-  func downloadTheShit() {
+  func downloadPlayerHead(playername: String) {
+    let url = URL(string: "https://avatar.hivemc.com/avatar/\(playername)/500")
+    
+    if let data = (try? Data(contentsOf: url!)) {
+      let playerHead = UIImage(data: data)
+      playerHeadImage.image = playerHead
+    } else {
+      // Show general profile picture
+    }
+  }
+  
+  func downloadJson(playername: String) {
     let load = DownloadUserProfile()
-    load.downloadJSON(requestedUsername) { (player) in
+    load.downloadJson(playername) { (player) in
       DispatchQueue.main.async {
         self.player = player!
       }
@@ -65,10 +91,22 @@ class PlayerViewController: UIViewController {
     self.navigationItem.titleView = logoView
   }
   
-  // Right bar button item (= plus)
-  func addToFavorite(_ sender: AnyObject) {
-    
-  }
+    @IBAction func rightBarButtonAction(_ sender: UIBarButtonItem) {
+        
+        // Create Action sheet
+        let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let actionOne = UIAlertAction(title: "Copy UUID", style: .default ) { (action) in
+            // Copy UUID to clipboard
+            let pasteBoard = UIPasteboard.general()
+            pasteBoard.string = self.player.uuid
+        }
+        actionSheet.addAction(actionOne)
+        
+        // Present the View Controller
+        present(actionSheet, animated: true, completion: nil)
+    }
+
+
 }
 
 extension PlayerViewController: UITableViewDataSource {

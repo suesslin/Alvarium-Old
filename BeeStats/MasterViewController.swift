@@ -79,7 +79,7 @@ class MasterViewController: UIViewController {
   override func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
     if segue.identifier == "toPlayer" {
       let dc = segue.destinationViewController as! PlayerViewController
-      dc.requestedUsername = searchBar.text!
+      dc.requestedPlayername = searchBar.text!
     }
   }
 }

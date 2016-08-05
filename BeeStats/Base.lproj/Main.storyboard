@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11129.15" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="q7F-ph-DMx">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11129.15" systemVersion="16A201w" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="q7F-ph-DMx">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11103.10"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <mutableArray key="Ubuntu-R.ttf">
+        <mutableArray key="Ubuntu-Regular.ttf">
             <string>Ubuntu</string>
             <string>Ubuntu</string>
             <string>Ubuntu</string>
@@ -25,7 +25,7 @@
                         <viewControllerLayoutGuide type="bottom" id="tFS-1f-zDk"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="rps-3k-JlK">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="AWB-Dz-amg">
@@ -76,7 +76,7 @@
                         <viewControllerLayoutGuide type="bottom" id="ERO-G1-yHg"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="GWn-y2-IkC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user_profile_bg" translatesAutoresizingMaskIntoConstraints="NO" id="plt-T0-saa">
@@ -126,32 +126,24 @@
                                             <frame key="frameInset" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading type" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tjB-5E-EGA">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Loading type" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tjB-5E-EGA">
+                                                    <frame key="frameInset" minX="8" minY="11" width="205" height="22"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading value" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fbp-6P-cmY">
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="146" id="ASj-FX-HmZ"/>
-                                                    </constraints>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Loading value" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fbp-6P-cmY">
+                                                    <frame key="frameInset" minX="221" minY="11" width="90" height="22"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
                                                     <color key="textColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="Fbp-6P-cmY" secondAttribute="trailing" constant="8" id="2Rq-uf-iX9"/>
-                                                <constraint firstItem="Fbp-6P-cmY" firstAttribute="top" secondItem="Nhj-d2-ZbG" secondAttribute="top" constant="11" id="VbF-32-ADF"/>
-                                                <constraint firstItem="tjB-5E-EGA" firstAttribute="centerY" secondItem="Nhj-d2-ZbG" secondAttribute="centerY" id="chY-Jc-ZUE"/>
-                                                <constraint firstItem="tjB-5E-EGA" firstAttribute="top" secondItem="Nhj-d2-ZbG" secondAttribute="top" constant="11" id="fFd-VD-UtD"/>
-                                                <constraint firstItem="tjB-5E-EGA" firstAttribute="leading" secondItem="Nhj-d2-ZbG" secondAttribute="leading" constant="8" id="g2D-Or-i32"/>
-                                                <constraint firstItem="tjB-5E-EGA" firstAttribute="baseline" secondItem="Fbp-6P-cmY" secondAttribute="baseline" id="j8x-S8-R1U"/>
-                                                <constraint firstItem="Fbp-6P-cmY" firstAttribute="leading" secondItem="tjB-5E-EGA" secondAttribute="trailing" constant="8" symbolic="YES" id="phd-q5-P8S"/>
-                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="typeLabel" destination="tjB-5E-EGA" id="EMC-yX-4Rd"/>
+                                            <outlet property="keyLabel" destination="tjB-5E-EGA" id="02D-a5-OUh"/>
                                             <outlet property="valueLabel" destination="Fbp-6P-cmY" id="aOF-b9-ViW"/>
                                         </connections>
                                     </tableViewCell>
@@ -178,17 +170,26 @@
                             <constraint firstItem="VtO-uC-OBV" firstAttribute="top" secondItem="7hb-2S-o7I" secondAttribute="bottom" constant="16" id="vwx-SU-DbB"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="ec6-Io-RTy"/>
+                    <navigationItem key="navigationItem" id="ec6-Io-RTy">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="b0d-67-mn7">
+                            <connections>
+                                <action selector="rightBarButtonAction:" destination="PM5-Jg-Irl" id="b64-HR-iWv"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
+                        <outlet property="playerHeadImage" destination="VtO-uC-OBV" id="XNy-yH-rAP"/>
                         <outlet property="playernameLabel" destination="LqQ-Co-Frz" id="NhF-EH-0cI"/>
+                        <outlet property="rankLabel" destination="MvU-gq-i4O" id="DsL-dZ-YWl"/>
                         <outlet property="statTable" destination="uXh-rc-8NR" id="G71-ac-AYc"/>
                         <outlet property="statusLabel" destination="C8s-4b-eUi" id="b3Y-qQ-bMA"/>
+                        <outlet property="tokensLabel" destination="rtP-hX-exA" id="A0h-pc-hQe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hse-dx-9lK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1533.5999999999999" y="-0.44977511244377816"/>
+            <point key="canvasLocation" x="1771.875" y="10.56338028169014"/>
         </scene>
     </scenes>
     <resources>

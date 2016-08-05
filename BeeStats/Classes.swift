@@ -47,17 +47,16 @@ struct Player {
     
     // Survival Games
     
-    let sgDic = dictionary?["sg"] as! [String:AnyObject]
-    
-    gameModes.append(
-      GameMode(fullName: "Survival Games", acronym: "SG", stats: [
-      Stat(key: "Victories", value: sgDic["victories"] as! Int),
-      Stat(key: "Kills", value: sgDic["kills"] as! Int),
-      Stat(key: "Deaths", value: sgDic["deaths"] as! Int),
-      Stat(key: "Deathmatches", value: sgDic["deathmatches"] as! Int),
-      Stat(key: "Points", value: sgDic["points"] as! Int)
-      ])
-    )
+    if let sgDic = dictionary?["sg"] as? [String:AnyObject] {
+        let sgStats = GameMode(fullName: "Survival Games", acronym: "SG", stats: [
+            Stat(key: "Victories", value: sgDic["victories"] as! Int),
+            Stat(key: "Kills", value: sgDic["kills"] as! Int),
+            Stat(key: "Deaths", value: sgDic["deaths"] as! Int),
+            Stat(key: "Deathmatches", value: sgDic["deathmatches"] as! Int),
+            Stat(key: "Points", value: sgDic["points"] as! Int)
+            ])
+        gameModes.append(sgStats)
+    }
     
   }
   

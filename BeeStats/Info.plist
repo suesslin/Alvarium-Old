@@ -30,9 +30,9 @@
 	<string>Main</string>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Ubuntu-L.ttf</string>
-		<string>Ubuntu-M.ttf</string>
-		<string>Ubuntu-R.ttf</string>
+		<string>Ubuntu-Bold.ttf</string>
+		<string>Ubuntu-Light.ttf</string>
+		<string>Ubuntu-Regular.ttf</string>
 	</array>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>

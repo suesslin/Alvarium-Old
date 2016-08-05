@@ -12,7 +12,7 @@ struct DownloadUserProfile {
   
   var startingURL = URL(string: "https://old.hivemc.com/json/userprofile/")
   
-  func downloadJSON(_ username: String, completion: ((Player?) -> Void)) {
+  func downloadJson(_ username: String, completion: ((Player?) -> Void)) {
     if let finalURL = URL(string: username, relativeTo: startingURL!) {
       let network = Network(url: finalURL)
       network.requestDownload {
