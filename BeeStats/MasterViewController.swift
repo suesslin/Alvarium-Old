@@ -11,15 +11,24 @@ import CoreData
 
 class MasterViewController: UIViewController {
   
+  @IBOutlet weak var tableView: UITableView!
   @IBOutlet weak var searchBar: UISearchBar!
-  var savedPlayers: [NSManagedObject] = []
+  var savedPlayers = [NSManagedObject]()
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
     updateUI()
     searchBar.delegate = self
+    tableView.dataSource = self
     
+  }
+  
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(true)
+    
+    print("Hello With Number" + String(savedPlayers.count))
+    tableView.reloadData()
   }
   
   func updateUI() {
@@ -86,6 +95,8 @@ class MasterViewController: UIViewController {
   }
 }
 
+// MARK: UISearchBarDelegate
+
 extension MasterViewController: UISearchBarDelegate {
   
   func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -122,5 +133,22 @@ extension MasterViewController: UISearchBarDelegate {
     present(controller, animated: true, completion: nil)
   }
   
+}
+
+// MARK: UITableViewDataSource
+
+extension MasterViewController: UITableViewDataSource {
+  
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return savedPlayers.count
+  }
+  
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let item = savedPlayers[indexPath.row]
+    let cell = tableView.dequeueReusableCell(withIdentifier: "player") as! PlayerTableViewCell
+    cell.playernameLabel.text = item.value(forKey: "favorite") as? String
+    print("Hello line " + (item.value(forKey: "favorite") as? String)!)
+    return cell
+  }
   
 }

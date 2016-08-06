@@ -10,6 +10,7 @@
 		4F0D486A1D502B7B006F8376 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0D48691D502B7B006F8376 /* MasterViewController.swift */; };
 		4F6D76DB1D554FEF00B88485 /* UbuntuFont in Resources */ = {isa = PBXBuildFile; fileRef = 4F6D76DA1D554FEF00B88485 /* UbuntuFont */; };
 		4F8109B01D567F3F002BAEE5 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8109AF1D567F3F002BAEE5 /* WebViewController.swift */; };
+		4F8109B31D568DEA002BAEE5 /* PlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8109B21D568DEA002BAEE5 /* PlayerTableViewCell.swift */; };
 		4FAC4A391D50054400154B06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAC4A381D50054400154B06 /* AppDelegate.swift */; };
 		4FAC4A3B1D50054400154B06 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAC4A3A1D50054400154B06 /* PlayerViewController.swift */; };
 		4FAC4A3E1D50054400154B06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FAC4A3C1D50054400154B06 /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 		4F0D48691D502B7B006F8376 /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
 		4F6D76DA1D554FEF00B88485 /* UbuntuFont */ = {isa = PBXFileReference; lastKnownFileType = folder; path = UbuntuFont; sourceTree = "<group>"; };
 		4F8109AF1D567F3F002BAEE5 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		4F8109B21D568DEA002BAEE5 /* PlayerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerTableViewCell.swift; sourceTree = "<group>"; };
 		4FAC4A351D50054400154B06 /* BeeStats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeeStats.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FAC4A381D50054400154B06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4FAC4A3A1D50054400154B06 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 				4FAC4A4F1D500E0900154B06 /* Network.swift */,
 				4FAC4A511D50109200154B06 /* Parsing.swift */,
 				4FDA59031D503456003308FE /* StatTableViewCell.swift */,
+				4F8109B21D568DEA002BAEE5 /* PlayerTableViewCell.swift */,
 				4FAC4A3C1D50054400154B06 /* Main.storyboard */,
 				4FAC4A421D50054400154B06 /* Assets.xcassets */,
 				4FAC4A441D50054400154B06 /* LaunchScreen.storyboard */,
@@ -173,6 +176,7 @@
 			files = (
 				4FAC4A501D500E0900154B06 /* Network.swift in Sources */,
 				4F8109B01D567F3F002BAEE5 /* WebViewController.swift in Sources */,
+				4F8109B31D568DEA002BAEE5 /* PlayerTableViewCell.swift in Sources */,
 				4FDA59041D503456003308FE /* StatTableViewCell.swift in Sources */,
 				4FAC4A411D50054400154B06 /* BeeStats.xcdatamodeld in Sources */,
 				4FAC4A3B1D50054400154B06 /* PlayerViewController.swift in Sources */,

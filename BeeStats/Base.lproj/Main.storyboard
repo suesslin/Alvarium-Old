@@ -13,6 +13,8 @@
             <string>Ubuntu</string>
             <string>Ubuntu</string>
             <string>Ubuntu</string>
+            <string>Ubuntu</string>
+            <string>Ubuntu</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -31,17 +33,60 @@
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="AWB-Dz-amg">
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="73" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IRW-GS-oW2">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="player" rowHeight="73" id="DDj-dF-AyF" customClass="PlayerTableViewCell" customModule="BeeStats" customModuleProvider="target">
+                                        <frame key="frameInset" minY="28" width="320" height="73"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DDj-dF-AyF" id="cvq-ce-uYp">
+                                            <frame key="frameInset" width="320" height="72"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Playername" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wDX-2N-bLa">
+                                                    <frame key="frameInset" minX="72" minY="17" width="288" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="default_profileImage" translatesAutoresizingMaskIntoConstraints="NO" id="t3u-ra-2p5">
+                                                    <frame key="frameInset" minX="8" minY="8" width="56" height="56"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Online" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aik-N5-pNT">
+                                                    <frame key="frameInset" minX="72" minY="37" width="91" height="16"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="14"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="playerHeadImage" destination="t3u-ra-2p5" id="VFi-PT-M9P"/>
+                                            <outlet property="playernameLabel" destination="wDX-2N-bLa" id="7Ax-Nu-ct0"/>
+                                            <outlet property="statusLabel" destination="aik-N5-pNT" id="uHT-Qq-5og"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="AWB-Dz-amg" firstAttribute="top" secondItem="zm5-iK-ZUu" secondAttribute="bottom" id="GLz-d5-jnd"/>
+                            <constraint firstItem="tFS-1f-zDk" firstAttribute="top" secondItem="IRW-GS-oW2" secondAttribute="bottom" id="T6P-er-cPE"/>
                             <constraint firstAttribute="trailing" secondItem="AWB-Dz-amg" secondAttribute="trailing" id="V9A-pw-cxp"/>
+                            <constraint firstItem="IRW-GS-oW2" firstAttribute="top" secondItem="AWB-Dz-amg" secondAttribute="bottom" id="YEv-z8-TuH"/>
+                            <constraint firstAttribute="trailing" secondItem="IRW-GS-oW2" secondAttribute="trailing" id="YIA-dF-tDB"/>
+                            <constraint firstItem="IRW-GS-oW2" firstAttribute="leading" secondItem="rps-3k-JlK" secondAttribute="leading" id="dNS-vC-Zms"/>
                             <constraint firstItem="AWB-Dz-amg" firstAttribute="leading" secondItem="rps-3k-JlK" secondAttribute="leading" id="qLV-Oh-cnY"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="00x-E7-Pyb"/>
                     <connections>
                         <outlet property="searchBar" destination="AWB-Dz-amg" id="ytt-gr-HS0"/>
+                        <outlet property="tableView" destination="IRW-GS-oW2" id="Q4c-vF-Prb"/>
                         <segue destination="PM5-Jg-Irl" kind="show" identifier="toPlayer" id="lB8-Wc-Lkx"/>
                     </connections>
                 </viewController>
@@ -93,7 +138,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="q7F-ph-DMx" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="gjr-49-pr5">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gjr-49-pr5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -241,7 +286,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uDW-NJ-nJj" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ak5-lG-WkX">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ak5-lG-WkX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
