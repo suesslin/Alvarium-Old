@@ -109,7 +109,7 @@ class PlayerViewController: UIViewController {
         actionSheet.addAction(actionOne)
       
       let actionTwo = UIAlertAction(title: "Add to favorites", style: .default) { (action) in
-        //self.save(self.player.username)
+        self.save(self.player.username)
       }
       
       actionSheet.addAction(actionTwo)
@@ -131,7 +131,6 @@ class PlayerViewController: UIViewController {
     }
   
   // Function for Saving coreData
-  /*
   func save(_ itemToSave: String) {
     let appDelegate = (UIApplication.shared().delegate as! AppDelegate)
     let context = appDelegate.persistentContainer.viewContext
@@ -145,7 +144,6 @@ class PlayerViewController: UIViewController {
       print("Error")
     }
   }
-*/
   
   override func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
     if segue.identifier == "toWebViewController" {

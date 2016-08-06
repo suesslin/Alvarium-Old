@@ -70,6 +70,30 @@ struct Player {
         ])
       gameModes.append(timvStats)
     }
+    
+    // Herobrine
+    
+    if let hbDic = dictionary?["hb"] as? [String:AnyObject] {
+      let hbStats = GameMode(fullName: "The Herobrine", acronym: "HB", stats: [
+        Stat(key: "Captures", value: hbDic["captures"] as! Int),
+        Stat(key: "Kills", value: hbDic["kills"] as! Int),
+        Stat(key: "Deaths", value: hbDic["deaths"] as! Int),
+        Stat(key: "KD", value: hbDic["kd"] as! Int),
+        Stat(key: "Points", value: hbDic["points"] as! Int)
+        ])
+      gameModes.append(hbStats)
+    }
+    
+    if let hnsDic = dictionary?["hns"] as? [String:AnyObject] {
+      let hnsStats = GameMode(fullName: "Hide and Seek", acronym: "HNS", stats: [
+        Stat(key: "Victories", value: hnsDic["victories"] as! Int),
+        Stat(key: "Hider Kills", value: hnsDic["hiderKills"] as! Int),
+        Stat(key: "Seeker Kills", value: hnsDic["seekerKills"] as! Int),
+        Stat(key: "Deaths", value: hnsDic["deaths"] as! Int),
+        Stat(key: "Points", value: hnsDic["points"] as! Int)
+        ])
+      gameModes.append(hnsStats)
+    }
 
     
   }
