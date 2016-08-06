@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class PlayerViewController: UIViewController {
   
@@ -18,7 +19,6 @@ class PlayerViewController: UIViewController {
   @IBOutlet weak var playernameLabel: UILabel!
   
   var requestedPlayername = ""
-  
   var player = Player() {
     
     // DidSet excutes when data has been loaded and player overwritten
@@ -43,10 +43,11 @@ class PlayerViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
     statTable.dataSource = self
+    
     updateUI()
   }
+  
 
   func updateUI() {
     // Updates Username, stats, etc. via JSON
@@ -91,21 +92,68 @@ class PlayerViewController: UIViewController {
     self.navigationItem.titleView = logoView
   }
   
+    // Action in the right corner of the navigation bar
+  
     @IBAction func rightBarButtonAction(_ sender: UIBarButtonItem) {
         
         // Create Action sheet
         let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+      
+        // Create Action for Copying UUID
+      
         let actionOne = UIAlertAction(title: "Copy UUID", style: .default ) { (action) in
             // Copy UUID to clipboard
             let pasteBoard = UIPasteboard.general()
             pasteBoard.string = self.player.uuid
         }
         actionSheet.addAction(actionOne)
-        
+      
+      let actionTwo = UIAlertAction(title: "Add to favorites", style: .default) { (action) in
+        //self.save(self.player.username)
+      }
+      
+      actionSheet.addAction(actionTwo)
+      
+      let actionThree = UIAlertAction(title: "Open on HiveMC.com", style: .default) { (action) in
+        self.performSegue(withIdentifier: "toWebViewController", sender: self)
+      }
+      
+      actionSheet.addAction(actionThree)
+
+      
+      
+      let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) in }
+      
+      actionSheet.addAction(cancelAction)
+      
         // Present the View Controller
         present(actionSheet, animated: true, completion: nil)
     }
-
+  
+  // Function for Saving coreData
+  /*
+  func save(_ itemToSave: String) {
+    let appDelegate = (UIApplication.shared().delegate as! AppDelegate)
+    let context = appDelegate.persistentContainer.viewContext
+    let entity = NSEntityDescription.entity(forEntityName: "FavoritesEntity", in: context)
+    let item = NSManagedObject(entity: entity!, insertInto: context)
+    item.setValue(itemToSave, forKey: "favorite")
+    
+    do {
+      try context.save()
+    } catch {
+      print("Error")
+    }
+  }
+*/
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
+    if segue.identifier == "toWebViewController" {
+      let nav = segue.destinationViewController as! UINavigationController
+      let dest = nav.topViewController as! WebViewController
+      dest.urlString = "https://hivemc.com/player/\(player.username)"
+    }
+  }
 
 }
 

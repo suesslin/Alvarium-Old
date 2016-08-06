@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import CoreData
 
 class MasterViewController: UIViewController {
   
   @IBOutlet weak var searchBar: UISearchBar!
+  var savedPlayers: [NSManagedObject] = []
   
   override func viewDidLoad() {
     super.viewDidLoad()
