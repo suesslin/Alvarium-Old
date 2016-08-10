@@ -11,6 +11,8 @@ import CoreData
 
 class MasterViewController: UIViewController {
   
+  // Implement 12 char max for typed in name! (And in alert!)
+  
   @IBOutlet weak var tableView: UITableView!
   @IBOutlet weak var searchBar: UISearchBar!
   var savedPlayers = [NSManagedObject]()

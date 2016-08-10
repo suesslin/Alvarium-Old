@@ -24,19 +24,30 @@ class PlayerViewController: UIViewController {
     // DidSet excutes when data has been loaded and player overwritten
     
     didSet {
-      playernameLabel.text = player.username
+      if player.username != "" {
+        playernameLabel.text = player.username
       
-      statTable.reloadData()
+        statTable.reloadData()
       
-      // When lastLogin is bigger than lastLogout it means that currently the user is logged in.
-      if player.lastLogin > player.lastLogout {
-        statusLabel.text = "Online"
+        // When lastLogin is bigger than lastLogout it means that currently the user is logged in.
+        if player.lastLogin > player.lastLogout {
+          statusLabel.text = "Online"
+        } else {
+          statusLabel.text = "Offline"
+        }
+      
+        tokensLabel.text = "\(player.tokens) Tokens"
+        rankLabel.text = player.rankName
       } else {
-        statusLabel.text = "Offline"
+        let alert = UIAlertController(title: "Requested playername, does not exist.", message: nil, preferredStyle: .alert)
+        
+        let action = UIAlertAction(title: "Go Back", style: .default) { (action) in
+          print("Go back!")
+        }
+        
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
       }
-      
-      tokensLabel.text = "\(player.tokens) Tokens"
-      rankLabel.text = player.rankName
       
     }
   }
