@@ -28,7 +28,6 @@ class MasterViewController: UIViewController {
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(true)
     
-    print("Hello With Number" + String(savedPlayers.count))
     tableView.reloadData()
   }
   
@@ -104,23 +103,25 @@ extension MasterViewController: UISearchBarDelegate {
     
     var containsInValidCharacter = false
     
-    if searchBar.text?.characters.count != 0 {
+    if searchBar.text?.characters.count != 0 && searchBar.text?.characters.count <= 17 {
       for letter in (searchBar.text?.characters)! {
         switch String(letter).uppercased() {
         case "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "X", "Y", "Z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "_": print("Normal letter")
-        default: searchRequestWrong(searchBar: searchBar)// Everything that is not allowed
+        default: searchRequestWrong(title: "Search request contains invalid character", message: "A-Z, 0-9 and _ are allowed", searchBar: searchBar)// Everything that is not allowed
         containsInValidCharacter = true
         }
       }
       if containsInValidCharacter != true {
         performSegue(withIdentifier: "toPlayer", sender: self)
       }
+    } else if searchBar.text?.characters.count >= 16 {
+      searchRequestWrong(title: "Over 12 characters", message: "Make sure your requested username is not longer than the allowed 16 characters", searchBar: searchBar)
     }
     
   }
   
-  func searchRequestWrong(searchBar: UISearchBar) {
-    let controller = UIAlertController(title: "Search request contains invalid character", message: "A-Z, 0-9 and _ are allowed", preferredStyle: .alert)
+  func searchRequestWrong(title: String?, message: String?, searchBar: UISearchBar) {
+    let controller = UIAlertController(title: title, message: message, preferredStyle: .alert)
     let actionOne = UIAlertAction(title: "Try again", style: .cancel) { (action) in
       searchBar.text = ""
       searchBar.becomeFirstResponder()
