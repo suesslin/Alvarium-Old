@@ -15,7 +15,6 @@ class MasterViewController: UIViewController {
   
   @IBOutlet weak var tableView: UITableView!
   @IBOutlet weak var searchBar: UISearchBar!
-  var savedPlayers = [NSManagedObject]()
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -142,14 +141,11 @@ extension MasterViewController: UISearchBarDelegate {
 extension MasterViewController: UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return savedPlayers.count
+    return 5
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let item = savedPlayers[indexPath.row]
     let cell = tableView.dequeueReusableCell(withIdentifier: "player") as! PlayerTableViewCell
-    cell.playernameLabel.text = item.value(forKey: "favorite") as? String
-    print("Hello line " + (item.value(forKey: "favorite") as? String)!)
     return cell
   }
   
