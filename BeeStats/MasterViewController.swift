@@ -106,7 +106,7 @@ extension MasterViewController: UISearchBarDelegate {
     if searchBar.text?.characters.count != 0 && searchBar.text?.characters.count <= 17 {
       for letter in (searchBar.text?.characters)! {
         switch String(letter).uppercased() {
-        case "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "X", "Y", "Z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "_": print("Normal letter")
+        case "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "_": print("Normal letter")
         default: searchRequestWrong(title: "Search request contains invalid character", message: "A-Z, 0-9 and _ are allowed", searchBar: searchBar)// Everything that is not allowed
         containsInValidCharacter = true
         }
@@ -115,7 +115,7 @@ extension MasterViewController: UISearchBarDelegate {
         performSegue(withIdentifier: "toPlayer", sender: self)
       }
     } else if searchBar.text?.characters.count >= 16 {
-      searchRequestWrong(title: "Over 12 characters", message: "Make sure your requested username is not longer than the allowed 16 characters", searchBar: searchBar)
+      searchRequestWrong(title: "Over 16 characters", message: "Make sure your requested username is not longer than the allowed 16 characters", searchBar: searchBar)
     }
     
   }
