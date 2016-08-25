@@ -43,6 +43,7 @@ class PlayerViewController: UIViewController {
         
         let action = UIAlertAction(title: "Go Back", style: .default) { (action) in
           print("Go back!")
+          self.performSegue(withIdentifier: "unwindToMasterVC", sender: self)
         }
         
         alert.addAction(action)

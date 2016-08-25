@@ -31,6 +31,10 @@ class MasterViewController: UIViewController {
     tableView.reloadData()
   }
   
+  @IBAction func unwindToMasterVC (storyboard: UIStoryboardSegue) {
+    
+  }
+  
   func updateUI() {
     // SearchBar
     searchBar.placeholder = "Search for player"
