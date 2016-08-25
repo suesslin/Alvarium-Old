@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11103.10"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -179,24 +180,22 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Loading Tokens" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rtP-hX-exA">
-                                <frame key="frameInset" minX="108" minY="166" width="99" height="16"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading Tokens" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rtP-hX-exA">
                                 <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="14"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Loading Status" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C8s-4b-eUi">
-                                <frame key="frameInset" minX="188" minY="185" width="151" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="14"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="606-e5-uHZ">
-                                <frame key="frameInset" minX="108" minY="189" width="72" height="17"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="606-e5-uHZ">
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="17" id="JGN-WS-AHz"/>
+                                    <constraint firstAttribute="width" constant="17" id="peC-PK-ur4"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="9"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading Username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LqQ-Co-Frz">
                                 <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="21"/>
@@ -236,6 +235,11 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading Status" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C8s-4b-eUi">
+                                <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="14"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -243,20 +247,26 @@
                             <constraint firstItem="MvU-gq-i4O" firstAttribute="leading" secondItem="VtO-uC-OBV" secondAttribute="trailing" constant="8" id="8sr-Oe-bMA"/>
                             <constraint firstAttribute="trailing" secondItem="plt-T0-saa" secondAttribute="trailing" id="9Ll-bb-KAx"/>
                             <constraint firstItem="plt-T0-saa" firstAttribute="top" secondItem="7hb-2S-o7I" secondAttribute="bottom" id="BRr-G1-Q56"/>
+                            <constraint firstItem="rtP-hX-exA" firstAttribute="top" secondItem="MvU-gq-i4O" secondAttribute="bottom" constant="38" id="FiK-y6-Mez"/>
                             <constraint firstAttribute="trailing" secondItem="plt-T0-saa" secondAttribute="trailing" id="GfN-UO-OvQ"/>
                             <constraint firstItem="LqQ-Co-Frz" firstAttribute="leading" secondItem="VtO-uC-OBV" secondAttribute="trailing" constant="8" id="HeK-Ol-y0b"/>
                             <constraint firstItem="VtO-uC-OBV" firstAttribute="leading" secondItem="GWn-y2-IkC" secondAttribute="leading" constant="16" id="MGq-FE-byC"/>
                             <constraint firstItem="uXh-rc-8NR" firstAttribute="leading" secondItem="GWn-y2-IkC" secondAttribute="leading" id="Tjq-Ik-AHa"/>
+                            <constraint firstItem="rtP-hX-exA" firstAttribute="leading" secondItem="GWn-y2-IkC" secondAttribute="leadingMargin" constant="88" id="Urf-VG-Vbu"/>
                             <constraint firstItem="uXh-rc-8NR" firstAttribute="top" secondItem="plt-T0-saa" secondAttribute="bottom" id="Xih-0f-lB6"/>
                             <constraint firstItem="VtO-uC-OBV" firstAttribute="top" secondItem="7hb-2S-o7I" secondAttribute="bottom" constant="16" id="cbp-cD-IDt"/>
+                            <constraint firstItem="C8s-4b-eUi" firstAttribute="leading" secondItem="606-e5-uHZ" secondAttribute="trailing" constant="8" id="czf-bg-n9b"/>
+                            <constraint firstItem="606-e5-uHZ" firstAttribute="leading" secondItem="GWn-y2-IkC" secondAttribute="leading" constant="108" id="f08-t8-i1k"/>
                             <constraint firstItem="VtO-uC-OBV" firstAttribute="leading" secondItem="GWn-y2-IkC" secondAttribute="leading" constant="16" id="f0K-wc-vQO"/>
                             <constraint firstAttribute="trailing" secondItem="uXh-rc-8NR" secondAttribute="trailing" id="gog-HK-7A2"/>
                             <constraint firstItem="LqQ-Co-Frz" firstAttribute="top" secondItem="7hb-2S-o7I" secondAttribute="bottom" constant="16" id="m8a-mZ-FOh"/>
                             <constraint firstItem="MvU-gq-i4O" firstAttribute="top" secondItem="LqQ-Co-Frz" secondAttribute="bottom" constant="8" id="sY8-n1-Fg3"/>
                             <constraint firstItem="plt-T0-saa" firstAttribute="leading" secondItem="GWn-y2-IkC" secondAttribute="leading" id="uZI-xB-hsU"/>
+                            <constraint firstItem="606-e5-uHZ" firstAttribute="top" secondItem="rtP-hX-exA" secondAttribute="bottom" constant="7" id="vl5-FR-yjq"/>
                             <constraint firstItem="VtO-uC-OBV" firstAttribute="top" secondItem="7hb-2S-o7I" secondAttribute="bottom" constant="16" id="vwx-SU-DbB"/>
                             <constraint firstItem="plt-T0-saa" firstAttribute="leading" secondItem="GWn-y2-IkC" secondAttribute="leading" id="xOf-NP-Ebv"/>
                             <constraint firstAttribute="bottom" secondItem="uXh-rc-8NR" secondAttribute="bottom" id="yVy-Dq-4Xt"/>
+                            <constraint firstItem="C8s-4b-eUi" firstAttribute="top" secondItem="rtP-hX-exA" secondAttribute="bottom" constant="8" id="ys9-94-ukL"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ec6-Io-RTy">
@@ -268,6 +278,7 @@
                     </navigationItem>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
+                        <outlet property="onlineSign" destination="606-e5-uHZ" id="9Tt-67-Mgz"/>
                         <outlet property="playerHeadImage" destination="VtO-uC-OBV" id="XNy-yH-rAP"/>
                         <outlet property="playernameLabel" destination="LqQ-Co-Frz" id="NhF-EH-0cI"/>
                         <outlet property="rankLabel" destination="MvU-gq-i4O" id="DsL-dZ-YWl"/>
@@ -281,7 +292,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hse-dx-9lK" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="k9v-PW-tb3" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2030.625" y="-19.014084507042252"/>
+            <point key="canvasLocation" x="2029.5999999999999" y="-19.340329835082461"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="JcU-l8-Vlf">

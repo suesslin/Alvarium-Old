@@ -154,4 +154,8 @@ extension MasterViewController: UITableViewDataSource {
     return cell
   }
   
+  func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    // Do stuff
+  }
+  
 }

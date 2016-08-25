@@ -17,6 +17,7 @@ class PlayerViewController: UIViewController {
   @IBOutlet weak var tokensLabel: UILabel!
   @IBOutlet weak var statTable: UITableView!
   @IBOutlet weak var playernameLabel: UILabel!
+  @IBOutlet weak var onlineSign: UIView!
   
   var requestedPlayername = ""
   var player = Player() {
@@ -62,6 +63,7 @@ class PlayerViewController: UIViewController {
   
 
   func updateUI() {
+    
     // Updates Username, stats, etc. via JSON
     downloadJson(playername: requestedPlayername)
     // Download player head profile picture
