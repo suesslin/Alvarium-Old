@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     // Override point for customization after application launch.
     setStatusBarBackgroundColor(color: UIColor(red: 110.0/255.0, green: 37.0/255.0, blue: 82.0/255.0, alpha: 1.0))
+    UINavigationBar.appearance().tintColor = UIColor.yellow()
     return true
   }
   
