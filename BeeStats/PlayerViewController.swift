@@ -58,7 +58,17 @@ class PlayerViewController: UIViewController {
     super.viewDidLoad()
     statTable.dataSource = self
     
+    let refreshControl = UIRefreshControl()
+    refreshControl.addTarget(self, action: "pullToRefresh:", for: .valueChanged)
+    refreshControl.attributedTitle = AttributedString(string: "Pull to refresh")
+    statTable.addSubview(refreshControl)
+    
     updateUI()
+  }
+  
+  func pullToRefresh(_ sender: UIRefreshControl) {
+    updateUI()
+    sender.endRefreshing()
   }
   
 
